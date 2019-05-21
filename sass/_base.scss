@@ -1,0 +1,416 @@
+/* start global*/
+*{
+	margin:0px;
+	box-sizing: border-box;
+}
+a{
+	 text-decoration:none;
+	 color:$WhiteColor;
+}
+.grid{
+	display:grid;
+}
+.flex{
+	display:flex;
+}
+.container{
+	@extend %container;
+}
+p{
+	@include text($DefaultFontP,$GrayColor,normal, $BaseFontSize+2px);
+}
+.block{
+	display:block;
+}
+li{ 
+   list-style: none;
+   @include text($DefaultFontTitle ,$WhiteColor,$FontWeightDefault+300,$BaseFontSize + 4px);
+}
+.boxshadow{
+	@extend %boxShadow;
+}	
+.textcenter{
+	text-align:$textCenter;
+	margin-bottom:$Padding+15px 0px;
+}
+.spaceinner{
+	@extend %spacesInner;
+}
+.titlefeature{
+	@include text($DefaultFontTitle,$BlackColor ,$FontWeightDefault +300, $BaseFontSize+24px);
+	margin-bottom:$Padding; 
+}
+.textFeature{
+	@include text($DefaultFontP,$GrayColor ,normal, $BaseFontSize+2px);
+	max-width:$Padding + 735px;
+	margin: 0 $autoMargin;
+	margin-bottom: $Padding+60px
+}
+.grid_item{
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 30px;
+}
+.mar{
+	margin-bottom:$Padding
+}
+.grid_gap{
+	grid-gap:30px
+}
+.colorWhite{
+	color:$WhiteColor;
+}
+.blackColor{
+	color:$BlackColor;
+}
+.space-bet{
+	justify-content: space-between;
+}
+/*end global*/
+/*start header section*/
+.grad{
+   @include gradient( $list);
+  width:$FullWidth;
+  position:fixed;
+  .grid_header{
+  		grid-template-columns: 0.2fr 1fr;
+  }
+  .imglogo{
+  		@include images($logo,53px,bottom);
+  }
+  .grid_nav{
+  		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    	width: 80%;
+    	float: right;
+  }
+  .ulheader{
+ 		 line-height: $DefaultLineHight + 30;
+  }
+}
+
+/*end header section*/
+/*start banner secion*/
+.banner{
+	@include images($bannerbg,auto,auto);
+	.grid_banner{
+	grid-template-columns:1fr 1fr;
+	}
+	.space{
+		padding:$Padding+250px 0px
+	}
+	.titleBanner{
+		@include text($DefaultFontTitle ,$WhiteColor,$Weightbold,$BaseFontSize+48);
+		margin-bottom:$Padding;
+	}
+	.textBanner{
+		@include text($DefaultFontP ,$WhiteColor ,$FontWeightDefault , $BaseFontSize+2px);
+		margin-bottom:$Padding+15px;
+	}
+	.brimarybutton{
+		@include buttonStyle($WhiteColor,$BlackColor,$DefaultLineHight+5px);
+    	@extend %buttons;
+	}
+	.brimarybutton:hover{
+		@extend %boxShadow;
+	}
+	.imgmobile{
+		@include images($bannermobile,850px,right);
+	}
+}
+/*end banner section*/
+/*start fetureas section*/
+.features{
+   .spaceinner{
+    .grid_item{
+    .featuresitem{
+        @extend %featureItem;
+    .imgIcon{
+        @include images($IconSec3,90px,auto);
+	    margin-bottom:$Padding+20px
+    }
+    .titleitem{
+        @include text($DefaultFontTitle,$BlackColor ,$FontWeightDefault+300, $BaseFontSize+8px);
+	    margin-bottom:$Padding;
+    }
+    .textItem{
+        line-height:$Padding+9px ;
+    }
+    }
+    }
+    } 
+}
+/*end fetureas section*/
+/*start Architecture section*/
+.Architecturebg{
+	background-color:$LightBlueColor;
+}
+.mobileround{
+	@include images($mobileround1,500px,right);
+	width: 599px;
+}
+.grid_arch{
+	grid-template-columns: 1.5fr 1fr;
+}
+.titlearch{
+	@include text($DefaultFontTitle,$BlackColor ,$FontWeightDefault+300, $BaseFontSize+24px);
+	margin-bottom:$Padding+15px
+}
+.textarch{
+	margin-bottom:$Padding+15px
+}
+.brimarycolor{
+   @include buttonStyle(none,$WhiteColor,$DefaultLineHight+5px);
+	@extend %buttons;
+	@include gradient( $list);
+}
+.brimarycolor:hover{
+	@include gradient( $list1);
+}
+/*-- start Architecture section2 -*/
+.mobileround2{
+	@include images($mobileround2,500px,right);
+	width: 599px;
+}
+/*-- end Architecture section2 -*/
+/*start vedio section*/
+.container{
+    .BGvideo{
+        @include images($videobg,500px,cover);
+	    width:$FullWidth;
+    .paddingvideo{
+        padding: 180px 495px;
+    }
+    }
+}
+/* end video section*/
+/*start pricing section*/
+.Architecturebg{
+    .container{
+       .grid_pricing{
+           grid-template-columns: 1fr 1fr 1fr;
+	        grid-gap:20px;
+           .height_item{
+               height: 370px;
+            .items{
+                .spacetitle{
+                    padding:$Padding+25px;
+                    justify-content: space-between;
+                    border-bottom:1px solid $borderGrayColor;
+                    margin-bottom:$Padding;
+                .price{
+                    @include text($DefaultFontP,$BlackColor ,bold, $BaseFontSize+24px);
+                }
+                }
+                .block{
+                    .removepadding{
+                        padding:0px;
+                    .space_a{
+                        margin-bottom:$Padding - 10px;
+					}
+					
+                    }
+				}
+				.pricingbutton{
+					@include buttonStyle($SecanderyButtonBG,$BlackColor,$DefaultLineHight+5px);
+					@extend %buttons;
+					margin:0 auto;
+					margin-top:30px;
+				}
+            }
+           }
+       }
+    }
+}
+/*end pricing section*/
+/*start screenshot section*/
+.screenshot{
+    .spaceinner{
+        .grid_item{
+            .bgfeature1{
+                @include images($imgfeature1,500px,contain);
+            }
+            .bgfeature2{
+                @include images($imgfeature2,500px,contain);
+            }
+            .bgfeature3{
+                @include images($imgfeature3,500px,contain);
+            }
+            .bgfeature4{
+                @include images($imgfeature4,500px,contain);
+            }
+        }
+    }
+}
+/*end screenshot section*/
+/*start Testimonials section*/
+.gridItemTest{
+	grid-template-columns: 0.3fr 1fr;
+	background-color:$WhiteColor;
+	border-radius:$BorderRadius;
+	padding:$Padding+20px ;
+}
+.Architecturebg{
+.container{
+.grid_banner{
+	grid-template-columns:1fr 1fr;
+.gridItemTest{      
+.imgTestimonials1{
+	@include images($imgTestimonials1,100px,contain);	
+}
+}
+.gridItemTest{
+  .imgTestimonials2{
+	  @include images($imgTestimonials2,100px,contain);
+  }
+}
+}
+}
+}
+/* start download app section*/
+.downloadBG{
+    @include gradient($list);
+    .titledownload{
+        @include text($DefaultFontP,$WhiteColor,$FontWeightDefault+300, $BaseFontSize+12px);
+    }
+    .width{
+        width:$FullWidth - 50%;
+	    margin:0px  $autoMargin;
+	    padding-bottom:20px
+    }
+    .download_button{
+        @include buttonStyle(transparent,$WhiteColor,$DefaultLineHight - 25px);
+	    @extend %buttons;
+    .grid_icons{
+        grid-template-columns: 0.5fr 0.8fr;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+    }
+    }
+.size_icon{
+	font-size:$BaseFontSize+20px
+}
+.download_button:hover{
+	@include buttonStyle($WhiteColor,$BlackColor,$DefaultLineHight - 25px);
+	.size_icon{
+	color:$PrimaryColor1
+	}
+	.app{
+	color:$BlackColor
+}
+}
+/*end download app section*/
+/*start news section*/
+.news{
+    .container{
+        .grid_pricing{
+            grid-template-columns: 1fr 1fr 1fr;
+	        grid-gap:20px;
+        .newsbg{
+			background-color:$SecanderyButtonBG;
+			&:hover{
+				background-color:$WhiteColor;
+				.buttonNews{
+				   @include gradient( $list);
+				}
+				.links_news{
+					@include gradient( $list);
+					  color:transparent;
+					 -webkit-background-clip: text;
+					  background-clip: text;	
+				}
+			}
+        .padd{
+            padding:$Padding + 15px;
+      
+        .lineHightnews{
+            line-height:$DefaultLineHight - 22px;
+        }
+        }
+        }
+        }
+    }
+}
+.buttonNews{
+	@include buttonStyle($WhiteColor,$BlackColor,$DefaultLineHight - 20px);
+}
+.links_news{
+   @include text($DefaultFontTitle,$BlackColor ,$FontWeightDefault+300, $BaseFontSize+8px);
+}
+
+/*end news section*/
+/*start footer section*/
+.titleFooter{
+	@include text($DefaultFontTitle,$WhiteColor,$FontWeightDefault+300, $BaseFontSize+12px);
+}
+
+.bgfooter{
+    background-color:$BlackColor;
+        .grid_footer{
+            grid-template-columns: 0.5fr 1fr 0.5fr;
+                .product{
+                    .titleFooter{
+                        @include text($DefaultFontTitle,$WhiteColor,$FontWeightDefault+300, $BaseFontSize+12px);
+                    }
+                    .padd0{
+                        padding:0px;
+                        .textFooter{
+                            @include text($DefaultFontP,$colorlightwhite,$FontWeightDefault, $BaseFontSize+2px);
+                        }
+                    }
+                }
+            .NEWSLETTER{
+                .inputfooter{
+                    @extend %input;
+				}
+				.buttonfooter{
+					@include buttonStyle(none,$BlackColor,$DefaultLineHight+5px - 15px);
+					@extend %buttons;
+					@include gradient( $list);
+					border-radius:60px;
+					position: relative;
+					right: 40px;
+				}
+            }
+            .instgram{
+                .imggrid{
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+	                height: 73px;
+                    .bgfooter1{
+                        	@include images($imgfooter1,100px,cover);
+                    }
+                    .bgfooter2{
+                        	@include images($imgfooter2,100px,cover);
+                    }
+                    .bgfooter3{
+                        	@include images($imgfooter3,100px,cover);
+                    }
+                    .bgfooter4{
+                        	@include images($imgfooter4,100px,cover);
+                    }
+                    .bgfooter5{
+                        	@include images($imgfooter5,100px,cover);
+                    }
+                    .bgfooter6{
+                        	@include images($imgfooter6,100px,cover);
+                    }
+                    .bgfooter7{
+                        	@include images($imgfooter7,100px,cover);
+                    }
+                    .bgfooter8{
+                        	@include images($imgfooter8,100px,cover);
+                    }
+                }
+			}
+		}
+            .spacecopy{
+				margin-top:$Padding + 35px;
+                .social{
+                    .border_icons{
+                        @extend %borderIcon;
+                        &:hover{
+                            @include gradient( $list);
+                        }
+                    }
+                }
+            }
+        }

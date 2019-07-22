@@ -1,80 +1,21 @@
-
-/*browsers*/
-@mixin rounded($radius: $BorderRadius) {
-  @each $vendor in $vendors {
-		#{$vendor}border-radius: $radius;
-	}
+// mixin for font
+@mixin font-style($font-size,$font-weight,$color:black) {
+    color:$color;
+    font-size: $font-size;
+    font-weight: $font-weight;   
 }
-/*mixin button*/
-@mixin buttonStyle($colorbg,$colorfont,$DefaultLineHight){
-	background:$colorbg;
-	color:$colorfont;
-	line-height:$DefaultLineHight;
+// mixin for image
+@mixin img($url,$width,$height) {
+    background-image: url($url);
+    width:$width;
+    height:$height ;
 }
-%buttons{
-	padding: 0px $Padding + 30px;
-	font-family:$DefaultFontTitle;
-	font-weight: $FontWeightDefault +300;
-	border-radius:$BorderRadius;
-	transition:$transation;
+%img-bg{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
 }
-/*mixin fon all text*/
-@mixin text($fontFamily,$colorfont,$fontWeight,$fontSize){
-	font-family:$fontFamily;
-	color:$colorfont;
-	font-weight:$fontWeight;
-	font-size:$fontSize;	
-}
-/*extend container*/
-%container{
-	width:80%;
-    margin-right: $autoMargin;
-    margin-left: $autoMargin;
-}
-/* image*/
-@mixin images($path,$height,$pos,$repeat:no-repeat){
-    background-image:url($path);
-    height:$height;
-    background-position: $pos;
-    background-repeat: $repeat;
-}
-/* extend space */
-%spacesInner{
-	padding : $Padding+105 0px;
-   }
-
-/* extend feature item*/
-%featureItem{
-    padding: $Padding+35px  $Padding+15px;
-    border-radius: $BorderRadius;
-}
-/* box shadow*/
-%boxShadow{
-	box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);
-}
-/*gradient*/
-@mixin gradient( $list) { 
-  background-image: linear-gradient( $list);  
-}
-/*input*/
-%input{
-	width: $FullWidth - 40% ;
-	border: 1px solid $colorinput;
-    font-size: $BaseFontSize + 1px;
-    line-height: $DefaultLineHight - 5px;
-    padding-right: $Padding;
-    height: 40px;
-    color: $colorgraylight;
-    border-radius: $BorderRadius + 15px;
-    background: $colorlightwhite;
-    padding-left: $Padding+5px;
-}
-/*border icon*/
-%borderIcon{
-	background: $colorlightblack;
-    height: $Padding + 15px;
-    width: $Padding + 15px;
-    text-align: $textCenter;
-    display: inline-block;
-    line-height: $DefaultLineHight - 15px;
+// mixin background
+@mixin bg($color) {
+    background-color: $color;
 }
